@@ -31,7 +31,7 @@ public class CalculatorTest4 {
 	}
 	
 	@Test
-	void testMultiplyByNegative() {
+	void testMultiplyAndAddByNegative() {
 		Calculator calculator = new Calculator();
 		CalcOutput result = calculator.multiplyAndAdd(5, -5);
 		assertEquals(-25, result.getMultiplicationResult());
