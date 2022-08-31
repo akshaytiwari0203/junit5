@@ -1,13 +1,15 @@
 package com.learning;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class CalculatorTest4 {
 	
+	
+	
 	@Test
-	void testMultiplyAndAddPositiveNumbers() {
+	public void testMultiplyAndAddPositiveNumbers() {
 		Calculator calculator = new Calculator();
 		CalcOutput result =calculator.multiplyAndAdd(5, 3);
 		assertEquals(15, result.getMultiplicationResult());
@@ -15,7 +17,7 @@ public class CalculatorTest4 {
 	}
 	
 	@Test
-	void testMultiplyAndAddByOne() {
+	public void testMultiplyAndAddByOne() {
 		Calculator calculator = new Calculator();
 		CalcOutput result = calculator.multiplyAndAdd(5, 1);
 		assertEquals(5, result.getMultiplicationResult());
@@ -23,7 +25,7 @@ public class CalculatorTest4 {
 	}
 	
 	@Test
-	void testMultiplyAndAddByZero() {
+	public void testMultiplyAndAddByZero() {
 		Calculator calculator = new Calculator();
 		CalcOutput result = calculator.multiplyAndAdd(5, 0);
 		assertEquals(0, result.getMultiplicationResult());
@@ -31,7 +33,7 @@ public class CalculatorTest4 {
 	}
 	
 	@Test
-	void testMultiplyAndAddByNegative() {
+	public void testMultiplyAndAddByNegative() {
 		Calculator calculator = new Calculator();
 		CalcOutput result = calculator.multiplyAndAdd(5, -5);
 		assertEquals(-25, result.getMultiplicationResult());

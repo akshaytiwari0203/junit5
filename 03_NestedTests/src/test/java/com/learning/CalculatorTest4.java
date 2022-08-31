@@ -1,48 +1,48 @@
 package com.learning;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 public class CalculatorTest4 {
 	
 	@Test
-	void testMultiplyPositiveNumbers() {
+	public void testMultiplyPositiveNumbers() {
 		Calculator calculator = new Calculator();
 		int result = calculator.multiply(5, 3);
 		assertEquals(15, result);
 	}
 	
 	@Test
-	void testMultiplyByOne() {
+	public void testMultiplyByOne() {
 		Calculator calculator = new Calculator();
 		int result = calculator.multiply(5, 1);
 		assertEquals(5, result);
 	}
 	
 	@Test
-	void testMultiplyByZero() {
+	public void testMultiplyByZero() {
 		Calculator calculator = new Calculator();
 		int result = calculator.multiply(5, 0);
 		assertEquals(0, result);
 	}
 	
 	@Test
-	void testAddPositiveNumbers() {
+	public void testAddPositiveNumbers() {
 		Calculator calculator = new Calculator();
 		int result = calculator.add(5, 3);
 		assertEquals(8, result);
 	}
 	
 	@Test
-	void testAddwithOne() {
+	public void testAddwithOne() {
 		Calculator calculator = new Calculator();
 		int result = calculator.add(5, 1);
 		assertEquals(6, result);
 	}
 	
 	@Test
-	void testAddWithZeroZero() {
+	public void testAddWithZeroZero() {
 		Calculator calculator = new Calculator();
 		int result = calculator.add(5, 0);
 		assertEquals(5, result);

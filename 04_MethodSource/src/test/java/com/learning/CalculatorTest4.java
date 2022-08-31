@@ -1,33 +1,52 @@
 package com.learning;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import java.util.Arrays;
+import java.util.Collection;
 
+import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.Parameterized;
+import org.junit.runners.Parameterized.Parameters;
+
+@RunWith(Parameterized.class)
 public class CalculatorTest4 {
-	
-	@Test
-	void testMultiplyAndAddPositiveNumbers() {
-		Calculator calculator = new Calculator();
-		CalcOutput result =calculator.multiplyAndAdd(5, 3);
-		assertEquals(15, result.getMultiplicationResult());
-		assertEquals(8, result.getAdditionResult());
+
+	private int numberA;
+	private int numberB;
+	private CalcOutput expected;
+
+	public CalculatorTest4(int numberA, int numberB, CalcOutput expected) {
+		super();
+		this.numberA = numberA;
+		this.numberB = numberB;
+		this.expected = expected;
 	}
-	
-	@Test
-	void testMultiplyAndAddByOne() {
-		Calculator calculator = new Calculator();
-		CalcOutput result = calculator.multiplyAndAdd(5, 1);
-		assertEquals(5, result.getMultiplicationResult());
-		assertEquals(6, result.getAdditionResult());
+
+	@Parameters(name = "multipying and adding {0} and {1} to expect result {2}")
+	public static Collection<Object[]> data() {
+		return Arrays.asList(new Object[][] { { 5, 3, new CalcOutput(15, 8) }, { 5, 1, new CalcOutput(5, 6) },
+				{ 5, 0, new CalcOutput(0, 5) }
+
+		});
 	}
-	
+
+	private Calculator calculator = null;
+
+	@Before
+	public void init() {
+		calculator = new Calculator();
+	}
+
 	@Test
-	void testMultiplyAndAddByZero() {
-		Calculator calculator = new Calculator();
-		CalcOutput result = calculator.multiplyAndAdd(5, 0);
-		assertEquals(0, result.getMultiplicationResult());
-		assertEquals(5, result.getAdditionResult());
+	public void testMultiplyAndAdd() throws Exception {
+
+		CalcOutput result = calculator.multiplyAndAdd(numberA, numberB);
+		assertEquals(expected.getMultiplicationResult(), result.getMultiplicationResult());
+		assertEquals(expected.getAdditionResult(), result.getAdditionResult());
+
 	}
 
 }
