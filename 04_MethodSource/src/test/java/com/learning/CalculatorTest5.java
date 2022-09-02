@@ -31,7 +31,6 @@ public class CalculatorTest5 {
 
 	}
 
-	@Disabled
 	@ParameterizedTest(name = "multipying and adding {0} and {1} to expect result {2}")
 	@MethodSource(value = "testDataRandom")
 	void testMultiplyAndAddWithRandomData(int number, int multiplier, CalcOutput expectedResult) {

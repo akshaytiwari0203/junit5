@@ -20,7 +20,7 @@ public class CalculatorTest5 {
 		assertEquals(result, output);
 	}
 	
-	@Disabled
+	
 	@ParameterizedTest(name="multipying {0} and {1} to expect result {2}")
 	@CsvSource({"5,3,15",
 			"5,1,5",
